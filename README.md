@@ -6,13 +6,12 @@ XXXandr84 Infra repository
 name: bastion
 username: appuser
 IP: 10.128.0.31
-bastion_IP:  158.160.119.138
-
+bastion_IP = 158.160.119.138
 Вторая виртальныя машина:
 
 name: someinternalhost
 username: appuser
-someinternalhost_IP: 10.128.0.22
+someinternalhost_IP = 10.128.0.22
 Public IP: no
 
 Самостоятельное  задание:
@@ -31,3 +30,4 @@ ssh -J appuser@158.160.119.138 appuser@someinternalhost -i ~/.ssh/id_ed25519
 Установил  Pritunl
 Настроил сервер
 Создал пользователя, скачал файл настроек подключения и проверил подключение.
+
