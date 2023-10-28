@@ -1,7 +1,7 @@
 # XXXandr84_infra
 XXXandr84 Infra repository
 bastion_IP = 158.160.119.138
-someinternalhost_IP = 10.128.0.22
+someinternalhost_IP = 10.128.0.31
 #Домашнее задание:
 #Первая виртальная машина:
 #name: bastion
@@ -12,7 +12,7 @@ someinternalhost_IP = 10.128.0.22
 
 #name: someinternalhost
 #username: appuser
-#someinternalhost_IP = 10.128.0.22
+#someinternalhost_IP = 10.128.0.31
 #Public IP: no
 
 #Самостоятельное  задание:
