@@ -1,6 +1,6 @@
 # XXXandr84_infra
 XXXandr84 Infra repository
-bastion_IP = 158.160.119.138
+bastion_IP = 158.160.124.211
 someinternalhost_IP = 10.128.0.31
 #Домашнее задание:
 #Первая виртальная машина:
