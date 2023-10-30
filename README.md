@@ -38,6 +38,7 @@ someinternalhost_IP = 10.128.0.31
 ##
 testapp_IP = 158.160.125.191
 testapp_port = 9292
+# TCP
 #
 #ā startup   script
 # В CLI надо добавить строку.
