@@ -1,0 +1,41 @@
+{
+    "builders": [
+        {
+            "type": "yandex",
+            "service_account_key_file": "/home/xandr/otus/yandex/key.json",
+            "folder_id": "b1g3ag9m932ds92jhgtr",
+	    "zone": "ru-central1-a",
+            "image_family": "reddit-full",
+            "image_name": "reddit-full-{{timestamp}}",
+            "source_image_family": "ubuntu-1604-lts",
+            "ssh_username": "ubuntu",
+            "platform_id": "standard-v1",
+            "subnet_id": "e9b3c3psr2ev2v2di99u",
+            "use_ipv4_nat": true
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "scripts/install_ruby.sh",
+            "execute_command": "sudo {{.Path}}"
+        },
+        {
+            "type": "shell",
+            "script": "scripts/install_mongodb.sh",
+            "execute_command": "sudo {{.Path}}"
+        },
+ {
+            "type": "file",
+            "source": "files/puma23.service",
+            "destination": "/tmp/puma23.service"
+        },
+
+        {
+            "type": "shell",
+            "script": "scripts/deploy.sh",
+            "execute_command": "sudo {{.Path}}"
+        }
+        
+    ]
+}
