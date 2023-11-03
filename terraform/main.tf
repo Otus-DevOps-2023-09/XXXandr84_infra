@@ -8,10 +8,10 @@ terraform {
 }
 
 provider "yandex" {
-  token     = "y0_AgAAAAANhbUxAATuwQAAAADwOAnXDE7wVMBVQ9Kr9F8U0ik1UysRAsY"
-  cloud_id  = "b1gks1e9rlvg2griti9l"
-  folder_id = "b1g3ag9m932ds92jhgtr"
-  zone      = "ru-central1-a"
+service_account_key_file = var.service_account_key_file
+cloud_id = var.cloud_id
+folder_id = var.folder_id
+zone = var.zone
 }
 
 resource "yandex_compute_instance" "app" {
@@ -20,19 +20,24 @@ resources {
 cores = 2
 memory = 2
 }
-metadata = {
-  ssh-keys = "ubuntu:${file("~/.ssh/id_ed25519.pub")}"}
-boot_disk {
-initialize_params {
-# РЈРєР°Р·Р°С‚СЊ id РѕР±СЂР°Р·Р° СЃРѕР·РґР°РЅРЅРѕРіРѕ РІ РїСЂРµРґС‹РґСѓС‰РµРј РґРѕРјР°С€РЅРµРј Р·Р°РґР°РЅРёРё
-image_id = "fd8ngj7246dt52oo9ckh"
-}
-}
-network_interface {
-# РЈРєР°Р·Р°РЅ id РїРѕРґСЃРµС‚Рё default-ru-central1-a
-subnet_id = "e9b3c3psr2ev2v2di99u"
-nat = true
-}
+
+ boot_disk {
+    initialize_params {
+      # Указать id образа созданного в предыдущем домашем задании
+      image_id = var.image_id
+    }
+  }
+
+  network_interface {
+    # Указан id подсети default-ru-central1-a
+    subnet_id = var.subnet_id
+    nat       = true
+  }
+
+  metadata = {
+  ssh-keys = "ubuntu:${file(var.public_key_path)}"
+  }
+
 connection {
   type = "ssh"
   host = yandex_compute_instance.app.network_interface.0.nat_ip_address
