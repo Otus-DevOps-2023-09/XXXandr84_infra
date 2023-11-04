@@ -44,7 +44,7 @@ connection {
   user = "ubuntu"
   agent = false
   # путь до приватного ключа
-  private_key = file("~/.ssh/id_ed25519")
+  private_key = file("/home/xandr/.ssh/id_ed25519")
   }
 
   provisioner "file" {
