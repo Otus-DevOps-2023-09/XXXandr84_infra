@@ -1,11 +1,11 @@
-#terraform {
-#  required_providers {
-#    yandex = {
-#      source = "yandex-cloud/yandex"
-#    }
-#  }
-#  required_version = ">= 0.13"
-#}
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  required_version = ">= 0.13"
+}
 
 provider "yandex" {
 service_account_key_file = var.service_account_key_file
@@ -44,6 +44,7 @@ connection {
   user = "ubuntu"
   agent = false
   # путь до приватного ключа
+  #private_key = file(var.private_key_path)
   private_key = file("/home/xandr/.ssh/id_ed25519")
   }
 
