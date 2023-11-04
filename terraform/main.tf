@@ -8,20 +8,21 @@
 #}
 
 provider "yandex" {
-service_account_key_file = var.service_account_key_file
-cloud_id = var.cloud_id
-folder_id = var.folder_id
-zone = var.zone
+  service_account_key_file = var.service_account_key_file
+  cloud_id                 = var.cloud_id
+  folder_id                = var.folder_id
+  zone                     = var.zone
 }
 
 resource "yandex_compute_instance" "app" {
-name = "reddit-base-1698741881"
-resources {
-cores = 2
-memory = 2
-}
+#  name = "reddit-base-1698741881"
+name = "reddit-app"
+  resources {
+    cores  = 2
+    memory = 2
+  }
 
- boot_disk {
+  boot_disk {
     initialize_params {
       # Указать id образа созданного в предыдущем домашем задании
       image_id = var.image_id
@@ -35,25 +36,25 @@ memory = 2
   }
 
   metadata = {
-  ssh-keys = "ubuntu:${file(var.public_key_path)}"
+    ssh-keys = "ubuntu:${file(var.public_key_path)}"
   }
 
-connection {
-  type = "ssh"
-  host = yandex_compute_instance.app.network_interface.0.nat_ip_address
-  user = "ubuntu"
-  agent = false
-  # РїСѓС‚СЊ РґРѕ РїСЂРёРІР°С‚РЅРѕРіРѕ РєР»СЋС‡Р°
-  private_key = file(var.private_key_path)
-  #private_key = file("/home/xandr/.ssh/id_ed25519")
+  connection {
+    type  = "ssh"
+    host  = yandex_compute_instance.app.network_interface.0.nat_ip_address
+    user  = "ubuntu"
+    agent = false
+    # РїСѓС‚СЊ РґРѕ РїСЂРёРІР°С‚РЅРѕРіРѕ РєР»СЋС‡Р°
+    private_key = file(var.private_key_path)
+    #private_key = file("/home/xandr/.ssh/id_ed25519")
   }
 
   provisioner "file" {
-  source = "files/puma.service"
-  destination = "/tmp/puma.service"
+    source      = "files/puma.service"
+    destination = "/tmp/puma.service"
   }
 
   provisioner "remote-exec" {
-  script = "files/deploy.sh"
+    script = "files/deploy.sh"
   }
 }
