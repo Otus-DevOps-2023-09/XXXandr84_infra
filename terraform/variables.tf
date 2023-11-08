@@ -3,6 +3,7 @@ variable "cloud_id" {
 }
 variable "folder_id" {
   description = "Folder"
+  default = "11111111111111111111"
 }
 variable "zone" {
   description = "Zone"
@@ -66,6 +67,6 @@ variable "secret_key" {
   description = "Folder"
 }
 
-variable "folder_id" {
-  description = "Folder"
-}
+#variable "folder_id" {
+#  description = "Folder"
+#}
