@@ -1,4 +1,4 @@
-#/\n\Z/
+/\n\Z/
 # provider \"yandex"\
 
 provider "yandex" {
