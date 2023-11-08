@@ -47,5 +47,9 @@ variable db_nat_ip_address {
   description = "db vm ip address"
   default     = "N/A"
 }
+variable "subnet_id" {
+  description = "Subnet"
+default = "subnet_id"
+}
 
 

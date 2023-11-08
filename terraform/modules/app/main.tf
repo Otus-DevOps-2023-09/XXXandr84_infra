@@ -14,19 +14,20 @@ resource "yandex_compute_instance" "app" {
     tags = "reddit-app"
   }
   resources {
-    cores  = 1
+    cores  = 2
     memory = 2
   }
 
   boot_disk {
     initialize_params {
-      image_id = var.app_disk_image
+      image_id =  var.app_disk_image # var.image_id # var.app_disk_image
     }
   }
 
   network_interface {
-    subnet_id = yandex_vpc_subnet.app-subnet.id
-    nat = true
+   # subnet_id = yandex_vpc_subnet.app-subnet.id
+subnet_id = var.subnet_id    
+nat = true
   }
 
   metadata = {
