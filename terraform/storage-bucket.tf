@@ -1,3 +1,6 @@
+#
+## /\n\Z/
+#
 provider "yandex" {
   version                  = 0.35
   service_account_key_file = var.service_account_key_file
@@ -12,4 +15,3 @@ resource "yandex_storage_bucket" "otus-terra" {
   secret_key    = var.secret_key
   force_destroy = "true"
 }
-# /\n\Z/
