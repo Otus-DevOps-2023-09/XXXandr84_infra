@@ -7,3 +7,5 @@ variables.json
 main1.tf
 terraform.tfvars
 main.tf.save
+*.backup
+/\n\Z/
