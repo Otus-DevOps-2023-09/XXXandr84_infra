@@ -3,6 +3,7 @@ variable "cloud_id" {
 }
 variable "folder_id" {
   description = "Folder"
+  default = "b1g3ag9m932ds92jhgtr"
 }
 variable "zone" {
   description = "Zone"
@@ -36,16 +37,36 @@ variable reddit-app {
 #}
 variable app_disk_image {
   description = "Disk image for reddit app"
-  default = "reddit-app-base"
+  default =  "fd8ngj7246dt52oo9ckh" #"reddit-app-base"
 }
 variable "db_disk_image" {
   description = "Disk image"
-  default = "reddit-app-base"
+  default =  "fd8ngj7246dt52oo9ckh" # "reddit-app-base"
 
 }
 variable db_nat_ip_address {
   description = "db vm ip address"
   default     = "N/A"
 }
+variable "subnet_id" {
+  description = "Subnet"
+default = "subnet_id"
+}
 
 
+
+#variable "bucket_name" {
+#  description = "Folder"#
+#}
+
+#variable "access_key" {
+#  description = "Folder"
+#}
+
+#variable "secret_key" {
+#  description = "Folder"
+#}
+
+#variable "folder_id" {
+#  description = "Folder"
+#}
