@@ -7,3 +7,4 @@ variables.json
 main1.tf
 terraform.tfvars
 main.tf.save
+*.retry
