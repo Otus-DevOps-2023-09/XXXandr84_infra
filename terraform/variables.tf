@@ -3,7 +3,11 @@ variable "cloud_id" {
 }
 variable "folder_id" {
   description = "Folder"
+<<<<<<< HEAD
   default = "11111111111111111111"
+=======
+  default = "b1g3ag9m932ds92jhgtr"
+>>>>>>> ansible-1
 }
 variable "zone" {
   description = "Zone"
@@ -37,11 +41,11 @@ variable reddit-app {
 #}
 variable app_disk_image {
   description = "Disk image for reddit app"
-  default = "reddit-app-base"
+  default =  "fd8ngj7246dt52oo9ckh" #"reddit-app-base"
 }
 variable "db_disk_image" {
   description = "Disk image"
-  default = "reddit-app-base"
+  default =  "fd8ngj7246dt52oo9ckh" # "reddit-app-base"
 
 }
 variable db_nat_ip_address {
@@ -53,11 +57,14 @@ variable "subnet_id" {
 default = "subnet_id"
 }
 
+<<<<<<< HEAD
 
 
 variable "bucket_name" {
   description = "Folder"
 }
+=======
+>>>>>>> ansible-1
 
 variable "access_key" {
   description = "Folder"
@@ -67,6 +74,21 @@ variable "secret_key" {
   description = "Folder"
 }
 
+<<<<<<< HEAD
+=======
+#variable "bucket_name" {
+#  description = "Folder"#
+#}
+
+#variable "access_key" {
+#  description = "Folder"
+#}
+
+#variable "secret_key" {
+#  description = "Folder"
+#}
+
+>>>>>>> ansible-1
 #variable "folder_id" {
 #  description = "Folder"
 #}

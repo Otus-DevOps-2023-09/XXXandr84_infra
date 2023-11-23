@@ -3,16 +3,28 @@
 #    yandex = {
 #      source = "yandex-cloud/yandex"
 #    }
+<<<<<<< HEAD
 #  }
+=======
+#  }#
+>>>>>>> ansible-1
 #  required_version = ">= 0.13"
 #}
 
 provider "yandex" {
   service_account_key_file = var.service_account_key_file
+<<<<<<< HEAD
+  cloud_id                 = var.cloud_id
+  folder_id                = var.folder_id
+  zone                     = var.zone
+}
+
+=======
   cloud_id  = var.cloud_id
   folder_id = var.folder_id
   zone      = var.zone
 }
+>>>>>>> ansible-1
 module "app" {
   source          = "../modules/app"
   public_key_path = var.public_key_path
@@ -34,6 +46,10 @@ module "db" {
 #  resources {
 #    cores  = 2
 #    memory = 2
+<<<<<<< HEAD
+#  }#
+#
+=======
 #  }
 
 #resource "yandex_vpc_network" "app-network" {
@@ -48,29 +64,48 @@ module "db" {
 #}
 
 
+>>>>>>> ansible-1
 #  boot_disk {
 #    initialize_params {
 #      # Указать id образа созданного в предыдущем домашем задании
 #      image_id = var.image_id
 #    }
+<<<<<<< HEAD
+#  }#
+#
+=======
 #  }
 
+>>>>>>> ansible-1
 #  network_interface {
 #    # Указан id подсети default-ru-central1-a
 #    subnet_id = var.subnet_id
 #    nat       = true
+<<<<<<< HEAD
+#  }#
+#
+#  metadata = {
+#    ssh-keys = "ubuntu:${file(var.public_key_path)}"
+#  }
+#
+=======
 #  }
 
 #  metadata = {
 #    ssh-keys = "ubuntu:${file(var.public_key_path)}"
 #  }
 
+>>>>>>> ansible-1
 #  connection {
 #    type  = "ssh"
 #    host  = yandex_compute_instance.app.network_interface.0.nat_ip_address
 #    user  = "ubuntu"
 #    agent = false
+<<<<<<< HEAD
+#    # РїСѓС‚СЊ РґРѕ РїСЂРёРІР°С‚РЅРѕРіРѕ РєР»СЋС‡Р°#
+=======
 #    # РїСѓС‚СЊ РґРѕ РїСЂРёРІР°С‚РЅРѕРіРѕ РєР»СЋС‡Р°
+>>>>>>> ansible-1
 #    private_key = file(var.private_key_path)
 #    #private_key = file("/home/xandr/.ssh/id_ed25519")
 #  }
@@ -79,8 +114,16 @@ module "db" {
 #    source      = "files/puma.service"
 #    destination = "/tmp/puma.service"
 #  }
+<<<<<<< HEAD
+
+#  provisioner "remote-exec" {
+#    script = "files/deploy.sh"
+#  }
+#}
+=======
 #
 #  provisioner "remote-exec" {
 #    script = "files/deploy.sh"
 #  }
 #}
+>>>>>>> ansible-1
