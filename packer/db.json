@@ -12,9 +12,16 @@
 "subnet_id": "e9b3c3psr2ev2v2di991",
 "use_ipv4_nat": "true"
 }],
+#"provisioners": [
+#{
+#"type": "shell",
+#"script": "./scripts/install_mongodb.sh",
+#"execute_command": "sudo {{.Path}}"
+#}]
 "provisioners": [
-{
-"type": "shell",
-"script": "./scripts/install_mongodb.sh",
-"execute_command": "sudo {{.Path}}"
-}]}
+ {
+ "type": "ansible",
+ "playbook_file": "ansible/packer_db.yml"
+ }
+]
+}
