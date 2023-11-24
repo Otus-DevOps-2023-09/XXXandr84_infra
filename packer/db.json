@@ -1,7 +1,7 @@
-{
+/home/xandr/otus4/XXXandr84_infra/packer{
 "builders": [{
 "type": "yandex",
-"service_account_key_file": "key.json",
+"service_account_key_file": "/home/xandr/otus4/XXXandr84_infra/packer/key.json",
 "folder_id": "b1g3ag9m932ds92jhgt1",
 "zone": "ru-central1-a",
 "source_image_family": "ubuntu-1604-lts",
