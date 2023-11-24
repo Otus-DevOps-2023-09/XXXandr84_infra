@@ -12,11 +12,11 @@
 "subnet_id": "e9b3c3psr2ev2v2di991",
 "use_ipv4_nat": "true"
 }],
+
 "provisioners": [
  {
  "type": "ansible",
  "playbook_file": "ansible/packer_app.yml"
- }
-]
+ }]
 }
 
