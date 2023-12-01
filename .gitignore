@@ -12,4 +12,11 @@ main.tf.save
 /\n\Z/
 =======
 *.retry
->>>>>>> ansible-1
+#>>>>>>> ansible-1
+# Vagrant & molecule
+.vagrant/
+*.log
+*.pyc
+.molecule
+.cache
+.pytest_cache
