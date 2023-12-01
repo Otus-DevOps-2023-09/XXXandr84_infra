@@ -20,3 +20,4 @@ main.tf.save
 .molecule
 .cache
 .pytest_cache
+vault.key
