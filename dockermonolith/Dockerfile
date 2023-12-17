@@ -13,4 +13,3 @@ RUN cd /reddit && rm Gemfile.lock && bundle install
 RUN chmod 0777 /start.sh
 
 CMD ["/start.sh"]
-
