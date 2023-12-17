@@ -1,0 +1,6 @@
+REPOSITORY              TAG       IMAGE ID       CREATED          SIZE
+xandr/ubuntu-tmp-file   latest    f004e6fb38a0   54 seconds ago   187MB
+nginx                   alpine    01e5c69afaf6   2 weeks ago      42.6MB
+nginx                   latest    a6bd71f48f68   3 weeks ago      187MB
+ubuntu                  18.04     f9a80a55f492   6 months ago     63.2MB
+hello-world             latest    9c7a54a9a43c   7 months ago     13.3kB
