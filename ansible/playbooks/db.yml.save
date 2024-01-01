@@ -1,4 +1,4 @@
----
+ccccccc---
 - name: Configure MongoDB
   hosts: db
   become: true
