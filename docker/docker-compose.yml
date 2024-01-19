@@ -2,7 +2,7 @@ version: '3.3'
 services:
 
   prometheus:
-    image: ${USER_NAME}/prometheus
+    image: prom/prometheus #image: ${USER_NAME}/prometheus
     ports:
       - 9090:9090
     volumes:
@@ -32,14 +32,14 @@ services:
       - back_net  
 
   mongodb-exporter:
-    image: ${USER_NAME}/mongodb-exporter
+    image: bitnami/mongodb-exporter # image: ${USER_NAME}/mongodb-exporter
     environment:
       MONGODB_URI: mongodb://post_db:27017    
     networks:
       - back_net
 
   blackbox-exporter:
-    image: ${USER_NAME}/blackbox-exporter
+    image: bitnami/blackbox-exporter # image: ${USER_NAME}/blackbox-exporter
     ports:
       - 9115:9115
     command:
@@ -61,7 +61,7 @@ services:
   ui:
     #build: ./ui
     #image: ${USERNAME}/ui:${UI_TAG}
-    image: ${USER_NAME}/ui
+    image: ${USER_NAME}/ui #image: xxxandr84/ui #  image: ${USER_NAME}/ui
     ports:
       - ${UI_HOST_PORT}:${UI_CONTAINER_PORT}/tcp
     networks:
@@ -71,6 +71,7 @@ services:
     #build: ./post-py
     #image: ${USERNAME}/post:${POST_TAG}
     image: ${USER_NAME}/post
+    #image: xxxandr84/post # image: ${USER_NAME}/post
     networks:
       - front_net
       - back_net
@@ -79,6 +80,8 @@ services:
     #build: ./comment
     #image: ${USERNAME}/comment:${COMMENT_TAG}
     image: ${USER_NAME}/comment
+    #image: xxxandr84/comment #  image: ${USER_NAME}/comment
+
     networks:
       - front_net
       - back_net
