@@ -28,7 +28,7 @@ services:
       - back_net
 
   prometheus:
-    image: xxxandr84/prometheus4
+    image: xxxandr84/prometheus
     ports:
       - '9090:9090'
     volumes:
@@ -40,35 +40,6 @@ services:
     networks:
       - front_net
       - back_net
-
-  node-exporter:
-    image: prom/node-exporter:v0.15.2
-    user: root
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys:ro
-      - /:/rootfs:ro
-    command:
-      - '--path.procfs=/host/proc'
-      - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.ignored-mount-points="^/(sys|proc|dev|host|etc)($$|/)"'
-    networks:
-      - front_net
-      - back_net
-
-  blackbox-exporter:
-    image: prom/blackbox-exporter
-    ports:
-      - '9115:9115'
-    # dns: 8.8.8.8
-    # restart: always 
-    #   command:
-    # volumes:
-      # - "./:/config"
-      # - '--config.file=/etc/blackboxexporter/config.yml'
-    networks:
-      - back_net
-      - front_net
 
 volumes:
   post_db:
