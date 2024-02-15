@@ -1,24 +1,17 @@
 version: '3'
 services:
-  fluentd:
-    image: xxxandr84/fluentd
-    ports:
-      - "24224:24224"
-      - "24224:24224/udp"
-
-  elasticsearch:
-    image: elasticsearch:7.4.0
+  post:
+    image: xxxandr84/post:logging
     environment:
-      - ELASTIC_CLUSTER=false
-      - CLUSTER_NODE_MASTER=true
-      - CLUSTER_MASTER_NODE_NAME=es01
-      - discovery.type=single-node
-    expose:
-      - 9200
+      - POST_DATABASE_HOST=post_db
+      - POST_DATABASE=posts
+    depends_on:
+      - post_db
     ports:
-      - "9200:9200"
+      - "5000:5000"
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: service.post
 
-  kibana:
-    image: kibana:7.4.0
-    ports:
-      - "5601:5601"
