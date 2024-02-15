@@ -6,3 +6,5 @@ RUN pip install -r requirements.txt
 ADD . /app
 EXPOSE  5000
 ENTRYPOINT ["python", "post_app.py"]
+
+
